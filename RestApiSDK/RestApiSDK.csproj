@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{25631DBA-9E34-4340-B5CE-DA7F540F9FD1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RestApiSDK</RootNamespace>
+    <AssemblyName>RestApiSDK</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="eDockProxy.cs" />
+    <Compile Include="Models\Amazon\Subscription.cs" />
+    <Compile Include="Models\Attributes\Attribute.cs" />
+    <Compile Include="Models\Attributes\AttributeSet.cs" />
+    <Compile Include="Models\Auth\TokenResponse.cs" />
+    <Compile Include="Models\Credentials\eDockClientCredentials.cs" />
+    <Compile Include="Models\Credentials\eDockCredentials.cs" />
+    <Compile Include="Models\Exceptions\eDockAPIException.cs" />
+    <Compile Include="Models\Exceptions\UnauthorizedException.cs" />
+    <Compile Include="Models\Exports\CustomOrdersExportFilterDTO.cs" />
+    <Compile Include="Models\Folders\Folder.cs" />
+    <Compile Include="Models\Folders\FolderCreate.cs" />
+    <Compile Include="Models\Folders\OrderContainerResponse.cs" />
+    <Compile Include="Models\Items\GetItemsRequest.cs" />
+    <Compile Include="Models\Items\Item.cs" />
+    <Compile Include="Models\Items\ItemAttribute.cs" />
+    <Compile Include="Models\Items\ItemAvailability.cs" />
+    <Compile Include="Models\Items\ItemCondition.cs" />
+    <Compile Include="Models\Items\ItemDescription.cs" />
+    <Compile Include="Models\Items\ItemDetail.cs" />
+    <Compile Include="Models\Items\ItemDetails.cs" />
+    <Compile Include="Models\Items\ItemDetailType.cs" />
+    <Compile Include="Models\Items\ItemFolder.cs" />
+    <Compile Include="Models\Items\ItemIdentifier.cs" />
+    <Compile Include="Models\Items\ItemIdentifierType.cs" />
+    <Compile Include="Models\Items\ItemImage.cs" />
+    <Compile Include="Models\Items\ItemSearchFilter.cs" />
+    <Compile Include="Models\Items\ItemVariation.cs" />
+    <Compile Include="Models\Items\PricingRow.cs" />
+    <Compile Include="Models\Items\PricingRowUpdate.cs" />
+    <Compile Include="Models\Items\PricingRowUpdateInternal.cs" />
+    <Compile Include="Models\Modules\InstalledModule.cs" />
+    <Compile Include="Models\Modules\Module.cs" />
+    <Compile Include="Models\Orders\AddNoteRequest.cs" />
+    <Compile Include="Models\Orders\ContactInformations.cs" />
+    <Compile Include="Models\Orders\Order.cs" />
+    <Compile Include="Models\Orders\OrderAddress.cs" />
+    <Compile Include="Models\Orders\OrderCreateResponse.cs" />
+    <Compile Include="Models\Orders\OrderDetailLevelEnum.cs" />
+    <Compile Include="Models\Orders\OrderDiscountTypeEnum.cs" />
+    <Compile Include="Models\Orders\OrderHistory.cs" />
+    <Compile Include="Models\Orders\OrderMoveRequest.cs" />
+    <Compile Include="Models\Orders\OrderPayment.cs" />
+    <Compile Include="Models\Orders\OrderRow.cs" />
+    <Compile Include="Models\Orders\OrderSearchFilter.cs" />
+    <Compile Include="Models\Orders\OrderStatus.cs" />
+    <Compile Include="Models\Orders\OrderStatusEnum.cs" />
+    <Compile Include="Models\Orders\OwnerModule.cs" />
+    <Compile Include="Models\Orders\PaymentMethodEnum.cs" />
+    <Compile Include="Models\Orders\ShipOrderRequest.cs" />
+    <Compile Include="Models\PagedRequest.cs" />
+    <Compile Include="Models\PagedResponse.cs" />
+    <Compile Include="Models\Pricelists\PriceList.cs" />
+    <Compile Include="Models\Pricelists\PriceListModule.cs" />
+    <Compile Include="Models\Pricelists\PriceListRow.cs" />
+    <Compile Include="Models\RequestFilter.cs" />
+    <Compile Include="Models\Sort.cs" />
+    <Compile Include="Models\Store\InAppPurchase.cs" />
+    <Compile Include="Models\Store\InAppPurchaseResult.cs" />
+    <Compile Include="Models\Store\InAppPurchaseRow.cs" />
+    <Compile Include="Models\Tracking\TrackingModel.cs" />
+    <Compile Include="NewtonsoftJsonSerializer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Encryptor.cs" />
+    <Compile Include="Services\Amazon\SubscriptionService.cs" />
+    <Compile Include="Services\AttributeService.cs" />
+    <Compile Include="Services\Auth\BaseAuthRestService.cs" />
+    <Compile Include="Services\Auth\TokenService.cs" />
+    <Compile Include="Services\BaseRestService.cs" />
+    <Compile Include="Services\CurrencyService.cs" />
+    <Compile Include="Services\CustomOrderExportService.cs" />
+    <Compile Include="Services\FolderService.cs" />
+    <Compile Include="Services\ImageService.cs" />
+    <Compile Include="Services\ItemService.cs" />
+    <Compile Include="Services\ModuleService.cs" />
+    <Compile Include="Services\OrderService.cs" />
+    <Compile Include="Services\PricelistService.cs" />
+    <Compile Include="Services\StoreService.cs" />
+    <Compile Include="Services\TrackingService.cs" />
+    <Compile Include="Services\UsersService.cs" />
+    <Compile Include="Utilities\Utilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
