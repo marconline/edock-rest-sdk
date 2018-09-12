@@ -1,5 +1,4 @@
 ﻿using eDock.Common.RestApiSDK.Models.Credentials;
-using eDock.Common.RestApiSDK.Security;
 using log4net;
 using RestSharp;
 using RestSharp.Authenticators;
@@ -15,13 +14,10 @@ namespace eDock.Common.RestApiSDK.Services
     public abstract class BaseRestService
     {
         protected RestClient Client;
-        private Encryptor Encryptor = new Encryptor();
 
         public BaseRestService(eDockCredentials Credentials)
         {
             Client = new RestClient("https://rest.edock.it/api");
-            //Client.AddDefaultHeader("X-edock-username", Credentials.eDockUsername);
-            //Client.AddDefaultHeader("X-api-token", Encryptor.Encrypt(Credentials.eDockAPIToken));
             Client.Authenticator = new OAuth2AuthorizationRequestHeaderAuthenticator(Credentials.AuthToken, "Bearer");
             Client.AddDefaultHeader("Content-Type", "application/json");
         }
